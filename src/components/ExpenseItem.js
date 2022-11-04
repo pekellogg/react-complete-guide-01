@@ -1,6 +1,7 @@
 import ExpenseDate from "./ExpenseDate";
 import Card from "./Card";
 import "./styles/ExpenseItem.css";
+// import Card from "./Card";
 
 export default function ExpenseItem(props) {
   return (

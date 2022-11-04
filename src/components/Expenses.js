@@ -1,5 +1,7 @@
 import staticExpenses from "./data/StaticExpenses";
 import ExpenseItem from "./ExpenseItem";
+import Card from "./Card";
+import "./styles/Expenses.css";
 
 export default function Expenses() {
   const displayExpenses = () => {
@@ -8,9 +10,5 @@ export default function Expenses() {
     });
   };
 
-  return (
-    <div className="expenses">
-      {displayExpenses()}
-    </div>
-  );
+  return <Card className="expenses">{displayExpenses()}</Card>;
 }
