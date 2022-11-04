@@ -1,10 +1,12 @@
 import Expenses from "./components/Expenses";
 
-export default function App() {
+const App = () => {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <Expenses/>
+      <Expenses />
     </div>
   );
-}
+};
+
+export default App;
