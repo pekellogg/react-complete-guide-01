@@ -1,11 +1,16 @@
 import React from "react";
-import Expenses from "./components/Expenses";
 import NewExpense from "./components/NewExpense";
+import Expenses from "./components/Expenses";
 
 const App = () => {
+  const addHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAdd={addHandler} />
       <Expenses />
     </div>
   );
