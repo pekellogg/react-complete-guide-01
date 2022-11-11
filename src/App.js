@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import staticExpenses from "./components/data/StaticExpenses";
 import NewExpense from "./components/NewExpense";
 import Expenses from "./components/Expenses";
 
 const App = () => {
-  const addHandler = (expense) => {
-    console.log("In App.js");
-    console.log(expense);
+  const [expenses, setExpenses] = useState(staticExpenses);
+
+  const addExpenseHandler = (expense) => {
+    setExpenses((previousExpenses) => {
+      return [expense, ...previousExpenses];
+    });
   };
 
   return (
     <div>
-      <NewExpense onAdd={addHandler} />
-      <Expenses />
+      <NewExpense onAdd={addExpenseHandler} />
+      <Expenses all={expenses} />
     </div>
   );
 };
