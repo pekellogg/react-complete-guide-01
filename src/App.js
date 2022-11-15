@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import staticExpenses from "./components/data/StaticExpenses";
 import NewExpense from "./components/NewExpense";
 import Expenses from "./components/Expenses";
@@ -13,7 +13,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="main">
       <NewExpense onAdd={addExpenseHandler} />
       <Expenses all={expenses} />
     </div>

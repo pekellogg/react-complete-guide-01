@@ -6,18 +6,20 @@ const ExpensesList = (props) => {
     return <h2 className="expenses-list__fallback">No expenses!</h2>;
   }
 
-  return (
-    <ul className="expenses-list">
-      {props.all.map((expense) => (
+  const displayExpensesList = () => {
+    return props.all.map((expense) => {
+      return (
         <ExpenseItem
           key={expense.id}
           title={expense.title}
           amount={expense.amount}
           date={expense.date}
         />
-      ))}
-    </ul>
-  );
+      );
+    });
+  };
+
+  return <ul className="expenses-list">{displayExpensesList()}</ul>;
 };
 
 export default ExpensesList;
