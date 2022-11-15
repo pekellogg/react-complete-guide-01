@@ -7,7 +7,7 @@ import ExpensesChart from "./ExpensesChart";
 import ExpensesList from "./ExpensesList";
 import "../styles/Expenses/Expenses.css";
 
-const Expenses = (props) => {
+const Expenses = () => {
   const [expenses, setExpenses] = useState(staticExpenses);
   const [selectedYear, setSelectedYear] = useState("");
 
@@ -16,14 +16,12 @@ const Expenses = (props) => {
   };
 
   const addExpenseHandler = (expense) => {
-    setExpenses((previousExpenses) => {
-      return [expense, ...previousExpenses];
-    });
+    setExpenses((previousExpenses) => [expense, ...previousExpenses]);
   };
 
-  const filtered = expenses.filter((expense) => {
-    return expense.date.getFullYear().toString() === selectedYear;
-  });
+  const filtered = expenses.filter(
+    (expense) => expense.date.getFullYear().toString() === selectedYear
+  );
 
   return (
     <div className="expenses">
@@ -33,8 +31,8 @@ const Expenses = (props) => {
           selected={selectedYear}
           onChangeFilter={filterChangeHandler}
         />
-        <ExpensesChart all={filtered} />
-        <ExpensesList all={filtered} />
+        <ExpensesChart expenses={filtered} />
+        <ExpensesList expenses={filtered} />
       </Card>
     </div>
   );

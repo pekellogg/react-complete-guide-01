@@ -2,12 +2,12 @@ import ExpenseItem from "./ExpenseItem";
 import "../styles/Expenses/ExpensesList.css";
 
 const ExpensesList = (props) => {
-  if (props.all.length === 0) {
+  if (props.expenses.length === 0) {
     return <h2 className="expenses-list__fallback">No expenses!</h2>;
   }
 
   const displayExpensesList = () => {
-    return props.all.map((expense) => {
+    return props.expenses.map((expense) => {
       return (
         <ExpenseItem
           key={expense.id}
