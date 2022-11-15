@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./styles/ExpenseForm.css";
+import "../styles/ExpenseForm.css";
 
 const ExpenseForm = (props) => {
   const [userInput, setUserInput] = useState({
